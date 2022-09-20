@@ -5,16 +5,24 @@
  * @param {int} h
  * @returns {string}
  */
+import { Canvas } from "canvas";
+
 export function getDataUrlFromArr(arr, w, h) {
   if(typeof w === 'undefined' || typeof h === 'undefined') {
     w = h = Math.sqrt(arr.length / 4);
   }
+  try {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');  
+    canvas.width = w;
+    canvas.height = h;
+  } catch () {
+    const canvas = createCanvas(w, h)
+    const ctx = canvas.getContext('2d')
+  }
+  
 
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
-
-  canvas.width = w;
-  canvas.height = h;
+ 
 
   const imgData = ctx.createImageData(w, h);
   imgData.data.set(arr);
