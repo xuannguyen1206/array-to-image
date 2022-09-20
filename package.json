@@ -1,5 +1,5 @@
 {
-  "name": "array-to-image",
+  "name": "arrayToImage",
   "version": "1.0.0",
   "description": "Convert an Uint8ClampedArray to an image",
   "main": "dist/index.js",
