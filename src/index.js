@@ -16,7 +16,7 @@ export function getDataUrlFromArr(arr, w, h) {
     const ctx = canvas.getContext('2d');  
     canvas.width = w;
     canvas.height = h;
-  } catch () {
+  } catch (error) {
     const canvas = createCanvas(w, h)
     const ctx = canvas.getContext('2d')
   }
